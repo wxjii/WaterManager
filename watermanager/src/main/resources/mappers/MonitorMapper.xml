@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.MonitorMapper">
+
+     <resultMap id="MonitorResult" type="Monitor">
+             <id column="m_id" property="mId"></id>
+             <result column="m_standard_up" property="mStandardUp"></result>
+             <result column="m_standard_down" property="mStandardDown"></result>
+             <result column="m_finite_up" property="mFiniteUp"></result>
+             <result column="m_finite_down" property="mFiniteDown"></result>
+             <result column="m_enable" property="mEnable"></result>
+         <association column="fc_id"  property="factorCode">
+             <id column="fc_id" property="fcId"></id>
+             <result column="fc_PH" property="fcPh"></result>
+             <result column="fc_suspension" property="fcSuspension"></result>
+             <result column="fc_BOD" property="fcBod"></result>
+             <result column="fc_COD" property="fcCod"></result>
+             <result column="fc_TOC" property="fcToc"></result>
+             <result column="fc_ammonia" property="fcAmmonia"></result>
+             <result column="fc_phosphate" property="fcPhosphate"></result>
+             <result column="fc_temperature" property="fcTemperature"></result>
+             <result column="fc_conductivity" property="fcConductivity"></result>
+             <result column="fc_turbidity" property="fcTurbidity"></result>
+             <result column="fc_dissolved" property="fcDissolved"></result>
+             <result column="fc_petroleum" property="fcPetroleum"></result>
+             <result column="fc_alage" property="fcAlage"></result>
+             <result column="fc_chlorophyll" property="fcChlorophyl"></result>
+             <result column="fc_nitrogen" property="fcNitrogen"></result>
+             <result column="fc_nitrite _nitrogen" property="fcNitriteNitrogen"></result>
+             <result column="fc_date" property="fcDate" ></result>
+         </association>
+     </resultMap>
+
+    <select id="QueryMonitor" resultMap="MonitorResult" parameterType="java.lang.Integer">
+           select  m.m_id,fc.fc_PH,m.m_standard_up,m.m_standard_down,m.m_finite_up,m.m_finite_dowm,m.m_enable
+           from monitor m inner join factor_code fc on m.fc_id = fc.fc_id limit #{page},10
+
+    </select>
+
+      <sql id="s3">
+           #{factorCode.fcId},#{mStandardUp},#{mStandardDown},#{mFiniteUp},#{mFiniteDowm},#{mEnable}
+      </sql>
+
+     <insert id="save" parameterType="Monitor">
+             insert into monitor(fc_id,m_standard_up,m_standard_down,m_finite_up,m_finite_dowm,m_enable) values(<include refid="s3"/>);
+     </insert>
+
+    <update id="UpdateMonitor" parameterType="Monitor">
+          update monitor
+        <trim prefix="SET" suffixOverrides=",">
+
+            <if test='factorCode.fcId and factorCode.fcId!=""'>
+                fc_id = #{factorCode.fcId},
+            </if>
+
+            <if test='mStandardUp!=null and mStandardUp!=""'>
+                m_standard_up = #{mStandardUp},
+            </if>
+
+            <if test='mStandardDown!=null and mStandardDown!=""'>
+                m_standard_down = #{mStandardDown},
+            </if>
+
+            <if test='mFiniteUp!=null and mFiniteUp!=""'>
+                m_finite_up = #{mFiniteUp},
+            </if>
+
+            <if test='mFiniteDowm!=null and mFiniteDowm!=""'>
+                m_finite_dowm = #{mFiniteDowm},
+            </if>
+
+            <if test=' mEnable==0 ||  mEnable!=null '>
+                m_enable=#{mEnable}
+            </if>
+
+            where m_id=#{mId}
+
+        </trim>
+    </update>
+
+    <delete id="deleteMonitorByID" parameterType="java.lang.Integer">
+         delete from monitor where m_id=#{id}
+    </delete>
+
+</mapper>

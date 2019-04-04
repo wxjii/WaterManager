@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.AvgUtilMapper">
+    <cache/>
+
+    <resultMap id="avgShoreResult" type="AvgUtil">
+        <!--id property="fcId" column="fc_id"/-->
+        <result property="fcPh" column="fc_PH"/>
+        <result property="fcSuspension" column="fc_suspension"/>
+        <result property="fcBod" column="fc_BOD"/>
+        <result property="fcCod" column="fc_COD"/>
+        <result property="fcToc" column="fc_TOC"/>
+        <result property="fcAmmonia" column="fc_ammonia"/>
+        <result property="fcPhosphate" column="fc_phosphate"/>
+        <result property="fcTemperature" column="fc_temperature"/>
+        <result property="fcConductivity" column="fc_conductivity"/>
+        <result property="fcTurbidity" column="fc_turbidity"/>
+        <result property="fcDissolved" column="fc_dissolved"/>
+        <result property="fcPetroleum" column="fc_petroleum"/>
+        <result property="fcAlage" column="fc_alage"/>
+        <result property="fcChlorophyll" column="fc_chlorophyll"/>
+        <result property="fcNitrogen" column="fc_nitrogen"/>
+        <result property="fcNitriteNitrogen" column="fc_nitrite_nitrogen"/>
+        <!--result property="fcDate" column="fc_date"/-->
+        </resultMap>
+<select id="queryAvgDay" resultMap="avgShoreResult" parameterType="DateUtil">
+       select avg(fc_PH) as fc_PH,avg(fc_suspension) as fc_suspension,avg(fc_BOD) as fc_BOD,avg(fc_COD) as fc_COD,avg(fc_TOC) asfc_TOC,
+        avg(fc_ammonia) asfc_ammonia ,avg(fc_phosphate)as fc_phosphate,avg(fc_temperature) as fc_temperature,avg(fc_conductivity) as fc_conductivity,
+        avg(fc_turbidity) as fc_turbidity,avg(fc_dissolved) as fc_dissolved,avg(fc_petroleum) as fc_petroleum,avg(fc_alage) as fc_alage,
+        avg(fc_chlorophyll) as fc_chlorophyll,avg(fc_nitrogen) as fc_nitrogen,avg(fc_nitrite_nitrogen) as fc_nitrite_nitrogen from factor_code
+         where fc_date  between  #{prefixdate} and  #{suffixdate}
+</select>
+
+
+    <select id="queryAvgMonth" resultMap="avgShoreResult" parameterType="DateUtil">
+         select avg(fc_PH) as fc_PH,avg(fc_suspension) as fc_suspension,avg(fc_BOD) as fc_BOD,avg(fc_COD) as fc_COD,avg(fc_TOC) asfc_TOC,
+        avg(fc_ammonia) asfc_ammonia ,avg(fc_phosphate)as fc_phosphate,avg(fc_temperature) as fc_temperature,avg(fc_conductivity) as fc_conductivity,
+        avg(fc_turbidity) as fc_turbidity,avg(fc_dissolved) as fc_dissolved,avg(fc_petroleum) as fc_petroleum,avg(fc_alage) as fc_alage,
+        avg(fc_chlorophyll) as fc_chlorophyll,avg(fc_nitrogen) as fc_nitrogen,avg(fc_nitrite_nitrogen) as fc_nitrite_nitrogen from factor_code
+         where fc_date  between  #{prefixdate} and  #{suffixdate}
+</select>
+
+
+    <select id="queryAvgYear" resultMap="avgShoreResult" parameterType="DateUtil">
+         select avg(fc_PH) as fc_PH,avg(fc_suspension) as fc_suspension,avg(fc_BOD) as fc_BOD,avg(fc_COD) as fc_COD,avg(fc_TOC) asfc_TOC,
+        avg(fc_ammonia) asfc_ammonia ,avg(fc_phosphate)as fc_phosphate,avg(fc_temperature) as fc_temperature,avg(fc_conductivity) as fc_conductivity,
+        avg(fc_turbidity) as fc_turbidity,avg(fc_dissolved) as fc_dissolved,avg(fc_petroleum) as fc_petroleum,avg(fc_alage) as fc_alage,
+        avg(fc_chlorophyll) as fc_chlorophyll,avg(fc_nitrogen) as fc_nitrogen,avg(fc_nitrite_nitrogen) as fc_nitrite_nitrogen from factor_code
+         where fc_date  between  #{prefixdate} and  #{suffixdate}
+</select>
+
+    <select id="queryAvgWeek" resultMap="avgShoreResult" parameterType="DateUtil">
+         select avg(fc_PH) as fc_PH,avg(fc_suspension) as fc_suspension,avg(fc_BOD) as fc_BOD,avg(fc_COD) as fc_COD,avg(fc_TOC) asfc_TOC,
+        avg(fc_ammonia) asfc_ammonia ,avg(fc_phosphate)as fc_phosphate,avg(fc_temperature) as fc_temperature,avg(fc_conductivity) as fc_conductivity,
+        avg(fc_turbidity) as fc_turbidity,avg(fc_dissolved) as fc_dissolved,avg(fc_petroleum) as fc_petroleum,avg(fc_alage) as fc_alage,
+        avg(fc_chlorophyll) as fc_chlorophyll,avg(fc_nitrogen) as fc_nitrogen,avg(fc_nitrite_nitrogen) as fc_nitrite_nitrogen from factor_code
+         where fc_date  between  #{prefixdate} and  #{suffixdate}
+</select>
+
+
+</mapper>

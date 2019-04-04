@@ -1,0 +1,190 @@
+2019-04-05 00:01:41.319  INFO 24010 --- [main] c.e.w.Watermanager1Application           : Starting Watermanager1Application on wxj with PID 24010 (/home/wxj/IdeaProjects/watermanager1/target/classes started by wxj in /home/wxj/IdeaProjects/watermanager1)
+2019-04-05 00:01:41.335  INFO 24010 --- [main] c.e.w.Watermanager1Application           : No active profile set, falling back to default profiles: default
+2019-04-05 00:01:43.155  INFO 24010 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-05 00:01:43.179  INFO 24010 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-05 00:01:43.179  INFO 24010 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-05 00:01:43.185  INFO 24010 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-05 00:01:43.249  INFO 24010 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-05 00:01:43.249 DEBUG 24010 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-04-05 00:01:43.250  INFO 24010 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1809 ms
+2019-04-05 00:01:44.040 DEBUG 24010 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-04-05 00:01:44.141  INFO 24010 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-05 00:01:44.152 DEBUG 24010 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-04-05 00:01:44.199 DEBUG 24010 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 45 mappings in 'requestMappingHandlerMapping'
+2019-04-05 00:01:44.211 DEBUG 24010 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-04-05 00:01:44.218 DEBUG 24010 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-04-05 00:01:44.240  WARN 24010 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-05 00:01:44.495  INFO 24010 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-05 00:01:44.499  INFO 24010 --- [main] c.e.w.Watermanager1Application           : Started Watermanager1Application in 3.705 seconds (JVM running for 5.075)
+2019-04-05 00:01:48.948  INFO 24010 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-05 00:01:48.949  INFO 24010 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-05 00:01:48.949 DEBUG 24010 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-04-05 00:01:48.955 DEBUG 24010 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-04-05 00:01:48.956  INFO 24010 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-04-05 00:01:48.962 DEBUG 24010 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2019-04-05 00:01:48.967 DEBUG 24010 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.watermanager.controller.controller2.UserController.login(java.util.Map<java.lang.String, java.lang.Object>)
+2019-04-05 00:01:49.034 DEBUG 24010 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{name=wxj, password=123456}]
+2019-04-05 00:01:49.051  INFO 24010 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-05 00:01:49.054  WARN 24010 --- [http-nio-8080-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-04-05 00:01:49.469  INFO 24010 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-05 00:01:49.719 DEBUG 24010 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-04-05 00:01:49.719 DEBUG 24010 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["1"]
+2019-04-05 00:01:49.727 DEBUG 24010 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-04-05 00:05:31.699  INFO 24010 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-05 00:05:31.701  INFO 24010 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-05 00:05:31.708  INFO 24010 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-05 00:05:37.031  INFO 24645 --- [main] c.e.w.Watermanager1Application           : Starting Watermanager1Application on wxj with PID 24645 (/home/wxj/IdeaProjects/watermanager1/target/classes started by wxj in /home/wxj/IdeaProjects/watermanager1)
+2019-04-05 00:05:37.037  INFO 24645 --- [main] c.e.w.Watermanager1Application           : No active profile set, falling back to default profiles: default
+2019-04-05 00:05:39.153  INFO 24645 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-05 00:05:39.177  INFO 24645 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-05 00:05:39.178  INFO 24645 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-05 00:05:39.184  INFO 24645 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-05 00:05:39.282  INFO 24645 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-05 00:05:39.283 DEBUG 24645 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-04-05 00:05:39.283  INFO 24645 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2019 ms
+2019-04-05 00:05:40.137 DEBUG 24645 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-04-05 00:05:40.270  INFO 24645 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-05 00:05:40.285 DEBUG 24645 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-04-05 00:05:40.358 DEBUG 24645 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 45 mappings in 'requestMappingHandlerMapping'
+2019-04-05 00:05:40.386 DEBUG 24645 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-04-05 00:05:40.398 DEBUG 24645 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-04-05 00:05:40.423  WARN 24645 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-05 00:05:40.699  INFO 24645 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-05 00:05:40.704  INFO 24645 --- [main] c.e.w.Watermanager1Application           : Started Watermanager1Application in 4.428 seconds (JVM running for 5.655)
+2019-04-05 00:05:42.528  INFO 24645 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-05 00:05:42.528  INFO 24645 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-05 00:05:42.529 DEBUG 24645 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-04-05 00:05:42.535 DEBUG 24645 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-04-05 00:05:42.535  INFO 24645 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-04-05 00:05:42.540 DEBUG 24645 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2019-04-05 00:05:42.544 DEBUG 24645 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.watermanager.controller.controller2.UserController.login(java.util.Map<java.lang.String, java.lang.Object>)
+2019-04-05 00:05:42.584 DEBUG 24645 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{name=wxj, password=123456}]
+2019-04-05 00:05:42.598  INFO 24645 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-05 00:05:42.601  WARN 24645 --- [http-nio-8080-exec-2] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-04-05 00:05:43.233  INFO 24645 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-05 00:05:43.635 DEBUG 24645 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-04-05 00:05:43.636 DEBUG 24645 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing ["1"]
+2019-04-05 00:05:43.645 DEBUG 24645 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-04-05 00:08:14.065  INFO 24645 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-05 00:08:14.067  INFO 24645 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-05 00:08:14.073  INFO 24645 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-05 00:08:18.441  INFO 25154 --- [main] c.e.w.Watermanager1Application           : Starting Watermanager1Application on wxj with PID 25154 (/home/wxj/IdeaProjects/watermanager1/target/classes started by wxj in /home/wxj/IdeaProjects/watermanager1)
+2019-04-05 00:08:18.448  INFO 25154 --- [main] c.e.w.Watermanager1Application           : No active profile set, falling back to default profiles: default
+2019-04-05 00:08:20.475  INFO 25154 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-05 00:08:20.501  INFO 25154 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-05 00:08:20.501  INFO 25154 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-05 00:08:20.507  INFO 25154 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-05 00:08:20.577  INFO 25154 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-05 00:08:20.577 DEBUG 25154 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-04-05 00:08:20.577  INFO 25154 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2034 ms
+2019-04-05 00:08:21.210  WARN 25154 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController' defined in file [/home/wxj/IdeaProjects/watermanager1/target/classes/com/example/watermanager/controller/controller2/UserController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.watermanager.controller.controller2.UserController]: Constructor threw exception; nested exception is java.lang.NullPointerException
+2019-04-05 00:08:21.213  INFO 25154 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-04-05 00:08:21.224  INFO 25154 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-04-05 00:08:21.231 ERROR 25154 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController' defined in file [/home/wxj/IdeaProjects/watermanager1/target/classes/com/example/watermanager/controller/controller2/UserController.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.watermanager.controller.controller2.UserController]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1287) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.example.watermanager.Watermanager1Application.main(Watermanager1Application.java:12) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.watermanager.controller.controller2.UserController]: Constructor threw exception; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:184) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:87) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1279) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	... 17 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at com.example.watermanager.controller.controller2.UserController.<init>(UserController.java:27) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:172) ~[spring-beans-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	... 19 common frames omitted
+
+2019-04-05 00:08:48.247  INFO 25293 --- [main] c.e.w.Watermanager1Application           : Starting Watermanager1Application on wxj with PID 25293 (/home/wxj/IdeaProjects/watermanager1/target/classes started by wxj in /home/wxj/IdeaProjects/watermanager1)
+2019-04-05 00:08:48.250  INFO 25293 --- [main] c.e.w.Watermanager1Application           : No active profile set, falling back to default profiles: default
+2019-04-05 00:08:50.210  INFO 25293 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-05 00:08:50.237  INFO 25293 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-05 00:08:50.237  INFO 25293 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-05 00:08:50.243  INFO 25293 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-05 00:08:50.334  INFO 25293 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-05 00:08:50.335 DEBUG 25293 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-04-05 00:08:50.335  INFO 25293 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1970 ms
+2019-04-05 00:08:51.056 DEBUG 25293 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-04-05 00:08:51.187  INFO 25293 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-05 00:08:51.203 DEBUG 25293 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-04-05 00:08:51.270 DEBUG 25293 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 45 mappings in 'requestMappingHandlerMapping'
+2019-04-05 00:08:51.284 DEBUG 25293 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-04-05 00:08:51.295 DEBUG 25293 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-04-05 00:08:51.321  WARN 25293 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-05 00:08:51.558  INFO 25293 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-05 00:08:51.563  INFO 25293 --- [main] c.e.w.Watermanager1Application           : Started Watermanager1Application in 3.929 seconds (JVM running for 4.903)
+2019-04-05 00:08:54.573  INFO 25293 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-05 00:08:54.573  INFO 25293 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-05 00:08:54.574 DEBUG 25293 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-04-05 00:08:54.585 DEBUG 25293 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-04-05 00:08:54.585  INFO 25293 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-04-05 00:08:54.591 DEBUG 25293 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2019-04-05 00:08:54.595 DEBUG 25293 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.watermanager.controller.controller2.UserController.login(java.util.Map<java.lang.String, java.lang.Object>)
+2019-04-05 00:08:54.640 DEBUG 25293 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [{name=wxj, password=123456}]
+2019-04-05 00:08:54.654  INFO 25293 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-05 00:08:54.657  WARN 25293 --- [http-nio-8080-exec-2] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-04-05 00:08:55.071  INFO 25293 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-05 00:08:55.322 DEBUG 25293 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-04-05 00:08:55.322 DEBUG 25293 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing ["1"]
+2019-04-05 00:08:55.329 DEBUG 25293 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-04-05 00:09:23.702  INFO 25293 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-05 00:09:23.703  INFO 25293 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-05 00:09:23.709  INFO 25293 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-05 01:26:34.189  INFO 5549 --- [main] c.e.w.service.AvgshoreServiceTest        : Starting AvgshoreServiceTest on wxj with PID 5549 (started by wxj in /home/wxj/IdeaProjects/watermanager)
+2019-04-05 01:26:34.201  INFO 5549 --- [main] c.e.w.service.AvgshoreServiceTest        : No active profile set, falling back to default profiles: default
+2019-04-05 01:26:34.318 DEBUG 5549 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5733f295
+2019-04-05 01:26:38.414 DEBUG 5549 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-04-05 01:26:38.670  INFO 5549 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-05 01:26:38.691 DEBUG 5549 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-04-05 01:26:38.806 DEBUG 5549 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 45 mappings in 'requestMappingHandlerMapping'
+2019-04-05 01:26:38.849 DEBUG 5549 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-04-05 01:26:38.865 DEBUG 5549 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-04-05 01:26:38.989  WARN 5549 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-05 01:26:39.530  INFO 5549 --- [main] c.e.w.service.AvgshoreServiceTest        : Started AvgshoreServiceTest in 6.091 seconds (JVM running for 8.345)
+2019-04-05 01:26:40.104  INFO 5549 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-05 01:26:40.128  WARN 5549 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-04-05 01:26:40.857  INFO 5549 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-05 01:26:41.121 DEBUG 5549 --- [Thread-1] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5733f295, started on Fri Apr 05 01:26:34 XJT 2019
+2019-04-05 01:26:41.126  INFO 5549 --- [Thread-1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-05 01:26:41.130  INFO 5549 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-05 01:26:41.201  INFO 5549 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-04-05 02:36:50.209  INFO 18004 --- [main] c.e.w.service.FactorCodeServiceTest1     : Starting FactorCodeServiceTest1 on wxj with PID 18004 (started by wxj in /home/wxj/IdeaProjects/watermanager)
+2019-04-05 02:36:50.223  INFO 18004 --- [main] c.e.w.service.FactorCodeServiceTest1     : No active profile set, falling back to default profiles: default
+2019-04-05 02:36:50.330 DEBUG 18004 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@32811494
+2019-04-05 02:36:54.101 DEBUG 18004 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-04-05 02:36:54.418  INFO 18004 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-05 02:36:54.447 DEBUG 18004 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-04-05 02:36:54.589 DEBUG 18004 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 45 mappings in 'requestMappingHandlerMapping'
+2019-04-05 02:36:54.632 DEBUG 18004 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-04-05 02:36:54.648 DEBUG 18004 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-04-05 02:36:54.722  WARN 18004 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-04-05 02:36:55.202  INFO 18004 --- [main] c.e.w.service.FactorCodeServiceTest1     : Started FactorCodeServiceTest1 in 6.151 seconds (JVM running for 7.763)
+2019-04-05 02:36:55.564  INFO 18004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-04-05 02:36:55.574  WARN 18004 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-04-05 02:36:56.084  INFO 18004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-04-05 02:36:56.401 DEBUG 18004 --- [Thread-1] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@32811494, started on Fri Apr 05 02:36:50 XJT 2019
+2019-04-05 02:36:56.403  INFO 18004 --- [Thread-1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-05 02:36:56.405  INFO 18004 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-04-05 02:36:56.410  INFO 18004 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

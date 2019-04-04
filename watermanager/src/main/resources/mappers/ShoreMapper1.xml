@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.repository1.ShoreRepository">
+    <resultMap id="ShoreMap" type="Shore">
+        <id column="s_id" property="sId"/>
+        <result column="s_PH" property="sPh" />
+        <result column="s_suspension" property="sSuspension"/>
+        <result column="s_BOD" property="sBod"/>
+        <result column="s_COD" property="sCod"/>
+        <result column="s_TOC" property="sToc"/>
+        <result column="s_ammonia" property="sAmmonia"/>
+        <result column="s_phosphate" property="sPhosphate"/>
+        <result column="s_temperature" property="sTemperature"/>
+        <result column="s_conductivity" property="sConductivity"/>
+        <result column="s_turbidity" property="sTurbidity"/>
+        <result column="s_dissolved" property="sDissolved"/>
+        <result column="s_petroleum" property="sPetroleum"/>
+        <result column="s_alage" property="sAlage"/>
+        <result column="s_chlorophyll" property="sChlorophyll"/>
+        <result column="s_nitrogen" property="sNitrogen"/>
+        <result column="s_nitrite_nitrogen" property="sNitriteNitrogen"/>
+        <result column="s_date" property="sDate"/>
+    </resultMap>
+
+    <resultMap id="AvgShoreMap" type="com.example.watermanager.domain.domain1.AvgShore">
+        <result column="s_PH" property="sPh"/>
+        <result column="s_suspension" property="sSuspension"/>
+        <result column="s_BOD" property="sBod"/>
+        <result column="s_COD" property="sCod"/>
+        <result column="s_TOC" property="sToc"/>
+        <result column="s_ammonia" property="sAmmonia"/>
+        <result column="s_phosphate" property="sPhosphate"/>
+        <result column="s_temperature" property="sTemperature"/>
+        <result column="s_conductivity" property="sConductivity"/>
+        <result column="s_turbidity" property="sTurbidity"/>
+        <result column="s_dissolved" property="sDissolved"/>
+        <result column="s_petroleum" property="sPetroleum"/>
+        <result column="s_alage" property="sAlage"/>
+        <result column="s_chlorophyll" property="sChlorophyll"/>
+        <result column="s_nitrogen" property="sNitrogen"/>
+        <result column="s_nitrite_nitrogen" property="sNitriteNitrogen"/>
+    </resultMap>
+
+    <select id="searchShoreHourData" parameterType="Date1" resultMap="AvgShoreMap">
+      SELECT  avg(s_PH) as s_PH,avg(s_suspension) as s_suspension,
+       avg(s_BOD) as s_BOD,avg(s_COD) as s_COD,avg(s_TOC) as s_TOC,
+       avg(s_ammonia) as s_ammonia,avg(s_phosphate) as s_phosphate,
+       avg(s_temperature) as s_temperature,avg(s_conductivity) as s_conductivity,
+       avg(s_turbidity) as s_turbidity,avg(s_dissolved) as s_dissolved,avg(s_petroleum) as s_petroleum,
+       avg(s_alage) as s_algae,avg(s_chlorophyll) as s_chlorophyll,avg(s_nitrogen) as s_nitrogen,
+       avg(s_nitrite_nitrogen) as s_nitrite_nitrogen
+       from shore where s_date between #{dateA}
+       and #{dateB}
+    </select>
+
+    <select id="realtimedata"  resultMap="ShoreMap">
+        select * from shore order by s_date desc limit 10;
+    </select>
+
+    <select id="historicalDataOnShore" parameterType="Date1" resultMap="ShoreMap">
+
+      SELECT  * from shore where s_date between #{dateA}
+       and #{dateB}
+
+    </select>
+</mapper>

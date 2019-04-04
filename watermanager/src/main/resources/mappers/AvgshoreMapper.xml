@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.AvgshoreMapper">
+    <cache/>
+
+    <resultMap id="avgshoreResult" type="Avgshore">
+        <!--id property="fcId" column="fc_id"/-->
+        <result property="sPh" column="s_PH"/>
+        <result property="sSuspension" column="s_suspension"/>
+        <result property="sBod" column="s_BOD"/>
+        <result property="sCod" column="s_COD"/>
+        <result property="sToc" column="s_TOC"/>
+        <result property="sAmmonia" column="s_ammonia"/>
+        <result property="sPhosphate" column="s_phosphate"/>
+        <result property="sTemperature" column="s_temperature"/>
+        <result property="sConductivity" column="s_conductivity"/>
+        <result property="sTurbidity" column="s_turbidity"/>
+        <result property="sDissolved" column="s_dissolved"/>
+        <result property="sPetroleum" column="s_petroleum"/>
+        <result property="sAlage" column="s_alage"/>
+        <result property="sChlorophyll" column="s_chlorophyll"/>
+        <result property="sNitrogen" column="s_nitrogen"/>
+        <result property="sNitriteNitrogen" column="s_nitrite_nitrogen"/>
+        <!--result property="fcDate" column="fc_date"/-->
+    </resultMap>
+    <select id="queryAvgDay" resultMap="avgshoreResult" parameterType="DateUtil">
+       select avg(s_PH) ass_PH,avg(s_suspension) as s_suspension,avg(s_BOD) as s_BOD,avg(s_COD) s_COD,avg(s_TOC)as s_TOC,
+        avg(s_ammonia) as s_ammonia,avg(s_phosphate) as s_phosphate,avg(s_temperature) as s_temperature,avg(s_conductivity) as s_conductivity,
+        avg(s_turbidity) as s_turbidity,avg(s_dissolved) as s_dissolved,avg(s_petroleum) as s_petroleum,avg(s_alage) as s_alage,
+        avg(s_chlorophyll) as s_chlorophyll,avg(s_nitrogen) as s_nitrogen,avg(s_nitrite_nitrogen) as s_nitrite_nitrogen from shore
+         where s_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+
+    <select id="queryAvgMonth" resultMap="avgshoreResult" parameterType="DateUtil">
+       select avg(s_PH) ass_PH,avg(s_suspension) as s_suspension,avg(s_BOD) as s_BOD,avg(s_COD) s_COD,avg(s_TOC)as s_TOC,
+        avg(s_ammonia) as s_ammonia,avg(s_phosphate) as s_phosphate,avg(s_temperature) as s_temperature,avg(s_conductivity) as s_conductivity,
+        avg(s_turbidity) as s_turbidity,avg(s_dissolved) as s_dissolved,avg(s_petroleum) as s_petroleum,avg(s_alage) as s_alage,
+        avg(s_chlorophyll) as s_chlorophyll,avg(s_nitrogen) as s_nitrogen,avg(s_nitrite_nitrogen) as s_nitrite_nitrogen from shore
+         where s_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+    <select id="queryAvgYear" resultMap="avgshoreResult" parameterType="DateUtil">
+       select avg(s_PH) ass_PH,avg(s_suspension) as s_suspension,avg(s_BOD) as s_BOD,avg(s_COD) s_COD,avg(s_TOC)as s_TOC,
+        avg(s_ammonia) as s_ammonia,avg(s_phosphate) as s_phosphate,avg(s_temperature) as s_temperature,avg(s_conductivity) as s_conductivity,
+        avg(s_turbidity) as s_turbidity,avg(s_dissolved) as s_dissolved,avg(s_petroleum) as s_petroleum,avg(s_alage) as s_alage,
+        avg(s_chlorophyll) as s_chlorophyll,avg(s_nitrogen) as s_nitrogen,avg(s_nitrite_nitrogen) as s_nitrite_nitrogen from shore
+         where s_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+    <select id="queryAvgWeek" resultMap="avgshoreResult" parameterType="DateUtil">
+       select avg(s_PH) ass_PH,avg(s_suspension) as s_suspension,avg(s_BOD) as s_BOD,avg(s_COD) s_COD,avg(s_TOC)as s_TOC,
+        avg(s_ammonia) as s_ammonia,avg(s_phosphate) as s_phosphate,avg(s_temperature) as s_temperature,avg(s_conductivity) as s_conductivity,
+        avg(s_turbidity) as s_turbidity,avg(s_dissolved) as s_dissolved,avg(s_petroleum) as s_petroleum,avg(s_alage) as s_alage,
+        avg(s_chlorophyll) as s_chlorophyll,avg(s_nitrogen) as s_nitrogen,avg(s_nitrite_nitrogen) as s_nitrite_nitrogen from shore
+         where s_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+</mapper>

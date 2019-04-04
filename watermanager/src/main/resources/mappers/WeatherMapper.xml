@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.WeatherMapper">
+
+    <resultMap id="weatherResultMap" type="Toxicity">
+        <id property="wId" column="w_id"/>
+        <result property="wRainfall" column="w_rainfall"/>
+        <result property="wTemperature" column="w_temperature"/>
+        <result property="wHumidity" column="w_humidity"/>
+        <result property="wMostRainfall" column="w_most_rainfall"/>
+        <result property="wSpeed" column="w_speed"/>
+        <result property="wDirection" column="w_direction"/>
+        <result property="wDate" column="w_date"/>
+    </resultMap>
+
+    <sql id="c1">
+        #{wRainfall},#{wTemperature},#{wHumidity},#{wMostRainfall},#{wSpeed},#{wDirection}
+    </sql>
+
+    <select id="selectAllWeather" resultMap="weatherResultMap">
+        select w_rainfall,w_temperature,w_humidity,w_most_rainfall
+        ,w_speed,w_direction,w_date from weather where 1=1 order by w_date desc limit 0,1;
+    </select>
+
+    <insert id="insertWeather" parameterType="Weather">
+        insert into weather values (default ,<include refid="c1"/>,default );
+    </insert>
+
+</mapper>

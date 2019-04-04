@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.AlarmLogsRepository">
+    <resultMap id="AlarmLogResultMap" type="AlarmLog">
+        <id column="idalarm_Log" property="idalarmLog" jdbcType="INTEGER" javaType="int"/>
+        <result column="fc_id" property="fcId" jdbcType="INTEGER" javaType="int"/>
+        <result column="a_l_method" property="aLMethod" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result column="a_l_people" property="aLPeople" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result column="a_l_schedule" property="aLSchedule" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result column="a_l_details" property="aLDetails" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result column="a_l_time" property="aLTime" />
+    </resultMap>
+
+
+    <select id="findByAlarmLogs" resultMap="AlarmLogResultMap">
+        select * from alarm_Log
+    </select>
+
+    <delete id="deleteById" parameterType="java.lang.String">
+        delete from alarm_Log where a_l_time like #{time}
+    </delete>
+
+    <insert id="saveByAlarmLogs" parameterType="AlarmLog">
+        insert into alarm_Log(fc_id,a_l_method,a_l_people,a_l_schedule,a_l_details)
+        values (#{fcId},#{aLMethod},#{aLPeople},#{aLSchedule},#{aLDetails})
+    </insert>
+
+</mapper>

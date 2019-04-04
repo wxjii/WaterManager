@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.ShoreMapper">
+
+    <resultMap id="shoreResultMap" type="Shore">
+        <id property="sId" column="s_id"/>
+        <result property="sPh" column="s_PH"/>
+        <result property="sSuspension" column="s_suspension"/>
+        <result property="sBod" column="s_bod"/>
+        <result property="sCod" column="s_cod"/>
+        <result property="sToc" column="s_toc"/>
+        <result property="sAmmonia" column="s_ammonia"/>
+        <result property="sPhosphate" column="s_phosphate"/>
+        <result property="sTemperature" column="s_temperature"/>
+        <result property="sConductivity" column="s_conductivity"/>
+        <result property="sTurbidity" column="s_turbidity"/>
+        <result property="sDissolved" column="s_dissolved"/>
+        <result property="sPetroleum" column="s_petroleum"/>
+        <result property="sAlage" column="s_alage"/>
+        <result property="sChlorophyll" column="s_chlorophyll"/>
+        <result property="sNitrogen" column="s_nitrogen"/>
+        <result property="sNitriteNitrogen" column="s_nitrite_nitrogen"/>
+        <result property="sDate" column="s_date"/>
+    </resultMap>
+
+    <sql id="c1">
+        #{sPh},#{sSuspension},#{sBod},#{sCod},#{sToc},#{sAmmonia},#{sPhosphate},#{sTemperature},
+        #{sConductivity},#{sTurbidity},#{sDissolved},#{sPetroleum},#{sAlage},#{sChlorophyll},#{sNitrogen},#{sNitriteNitrogen}
+    </sql>
+
+    <select id="selectAllShore" resultMap="shoreResultMap">
+        select s_PH,s_suspension,s_BOD,s_COD,s_TOC,s_ammonia,s_phosphate,
+               s_temperature,s_conductivity,s_turbidity,s_dissolved
+        ,s_petroleum,s_alage,s_chlorophyll,s_nitrogen,s_nitrite_nitrogen,s_date
+        from shore where 1 = 1 order by s_date desc limit 0,1;
+    </select>
+
+    <insert id="insertShore" parameterType="Shore">
+        insert into shore values (default ,<include refid="c1"/>,default );
+    </insert>
+
+</mapper>

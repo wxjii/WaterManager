@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.AlarmTypeRepository">
+    <resultMap id="AlarmTypeResultMap" type="AlarmType">
+        <id column="a_t_id" property="aTId" jdbcType="INTEGER" javaType="int"/>
+        <result column="a_t_name" property="aTName" jdbcType="VARCHAR" javaType="java.lang.String"/>
+    </resultMap>
+
+    <select id="findAllByType" resultMap="AlarmTypeResultMap">
+        select * from alarmType
+    </select>
+
+</mapper>

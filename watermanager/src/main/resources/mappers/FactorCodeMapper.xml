@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.FactorCodeMapper">
+
+    <resultMap id="factorCodeResultMap" type="FactorCode">
+        <id property="fcId" column="fc_id"/>
+        <result property="fcPh" column="fc_ph"/>
+        <result property="fcSuspension" column="fc_suspension"/>
+        <result property="fcBod" column="fc_bod"/>
+        <result property="fcCod" column="fc_cod"/>
+        <result property="fcToc" column="fc_toc"/>
+        <result property="fcAmmonia" column="fc_ammonia"/>
+        <result property="fcPhosphate" column="fc_phosphate"/>
+        <result property="fcTemperature" column="fc_temperature"/>
+        <result property="fcConductivity" column="fc_conductivity"/>
+        <result property="fcTurbidity" column="fc_turbidity"/>
+        <result property="fcDissolved" column="fc_dissolved"/>
+        <result property="fcPetroleum" column="fc_petroleum"/>
+        <result property="fcAlage" column="fc_alage"/>
+        <result property="fcChlorophyll" column="fc_chlorophyll"/>
+        <result property="fcNitrogen" column="fc_nitrogen"/>
+        <result property="fcNitriteNitrogen" column="fc_nitrite_nitrogen"/>
+        <result property="fcDate" column="fc_date"/>
+    </resultMap>
+
+    <sql id="c1">
+        #{fcPh},#{fcSuspension},#{fcBod},#{fcCod},#{fcToc},#{fcAmmonia},#{fcPhosphate},#{fcTemperature},
+        #{fcConductivity},#{fcTurbidity},#{fcDissolved},#{fcPetroleum},#{fcAlage},#{fcChlorophyll},#{fcNitrogen}
+       ,#{fcNitriteNitrogen}
+    </sql>
+
+    <select id="selectAllFactorCode" resultMap="factorCodeResultMap">
+        select fc_PH,fc_suspension,fc_BOD,fc_COD,fc_TOC,fc_ammonia,fc_phosphate,
+               fc_temperature,fc_conductivity,fc_turbidity,fc_dissolved,
+               fc_petroleum,fc_alage,fc_chlorophyll,fc_nitrogen,fc_nitrite_nitrogen
+        ,fc_date
+               from factor_code where 1=1 order by fc_date desc limit 0,1;
+    </select>
+
+    <insert id="insertFactorCode" parameterType="FactorCode">
+        insert into factor_code values (default ,<include refid="c1"/>,default );
+    </insert>
+
+</mapper>

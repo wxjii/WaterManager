@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.repository1.WeatherRepository">
+    <resultMap id="weatherDatatMap" type="Weather">
+        <id column="w_id" property="wId"/>
+        <result column="w_rainfall" property="wRainfall" />
+        <result column="w_temperature" property="wTemperature" />
+        <result column="w_humidity" property="wHumidity" />
+        <result column="w_most_rainfall" property="wMostrainfall" />
+        <result column="w_speed" property="wSpeed" />
+        <result column="w_direction" property="wDirection" />
+        <result column="w_date" property="wDate" />
+    </resultMap>
+
+    <resultMap id="queryWeatherHourData" type="com.example.watermanager.domain.domain1.AvgWeather">
+        <result column="w_rainfall" property="wRainfall" />
+        <result column="w_temperature" property="wTemperature" />
+        <result column="w_humidity" property="wHumidity" />
+        <result column="w_most_rainfall" property="wMostrainfall" />
+        <result column="w_speed" property="wSpeed" />
+        <result column="w_direction" property="wDirection" />
+    </resultMap>
+
+    <select id="weatherData"   resultMap="weatherDatatMap">
+       select * from weather where w_date=(select max(w_date) from weather)
+    </select>
+
+    <select id="meteorologicalHistoricalData" parameterType="Date1"   resultMap="weatherDatatMap">
+       select * from weather where w_date between #{dateA}
+       and #{dateB}
+    </select>
+
+    <select id="queryWeatherHourData" parameterType="Date1"   resultMap="queryWeatherHourData">
+       select avg(w_rainfall) as w_rainfall,avg(w_temperature) as w_temperature,
+              avg(w_humidity) as w_humidity,avg(w_most_rainfall),avg(w_speed),
+              avg(w_direction) as w_direction
+       from weather where w_date between #{dateA}
+       and #{dateB}
+    </select>
+
+</mapper>

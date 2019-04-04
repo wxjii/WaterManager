@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.repository1.FactorCodeRepository">
+    <resultMap id="factorCodeMap" type="FactorCode">
+        <id column="fc_id" property="fcId"/>
+        <result column="fc_PH" property="fcPh"/>
+        <result column="fc_suspension" property="fcSuspension"/>
+        <result column="fc_BOD" property="fcBod"/>
+        <result column="fc_COD" property="fcCod"/>
+        <result column="fc_TOC" property="fcToc"/>
+        <result column="fc_ammonia" property="fcAmmonia"/>
+        <result column="fc_phosphate" property="fcPhosphate"/>
+        <result column="fc_temperature" property="fcTemperature"/>
+        <result column="fc_conductivity" property="fcConductivity"/>
+        <result column="fc_turbidity" property="fcTurbidity"/>
+        <result column="fc_dissolved" property="fcDissolved"/>
+        <result column="fc_petroleum" property="fcPetroleum"/>
+        <result column="fc_algae" property="fcAlgae"/>
+        <result column="fc_chlorophyll" property="fcChlorophyll"/>
+        <result column="fc_nitrogen" property="fcNitrogen"/>
+        <result column="fc_nitrite_nitrogen" property="fcNitriteNitrogen"/>
+        <result column="fc_date" property="fcDate"/>
+    </resultMap>
+
+
+    <resultMap id="avgFactorCodeMap" type="com.example.watermanager.domain.domain1.AvgFactorCode">
+        <result column="fc_PH" property="fcPh"/>
+        <result column="fc_suspension" property="fcSuspension"/>
+        <result column="fc_BOD" property="fcBod"/>
+        <result column="fc_COD" property="fcCod"/>
+        <result column="fc_TOC" property="fcToc"/>
+        <result column="fc_ammonia" property="fcAmmonia"/>
+        <result column="fc_phosphate" property="fcPhosphate"/>
+        <result column="fc_temperature" property="fcTemperature"/>
+        <result column="fc_conductivity" property="fcConductivity"/>
+        <result column="fc_turbidity" property="fcTurbidity"/>
+        <result column="fc_dissolved" property="fcDissolved"/>
+        <result column="fc_petroleum" property="fcPetroleum"/>
+        <result column="fc_algae" property="fcAlgae"/>
+        <result column="fc_chlorophyll" property="fcChlorophyll"/>
+        <result column="fc_nitrogen" property="fcNitrogen"/>
+        <result column="fc_nitrite_nitrogen" property="fcNitriteNitrogen"/>
+    </resultMap>
+
+    <select id="realtimedata"  resultMap="factorCodeMap">
+        select * from factor_code order by fc_date desc limit 10;
+    </select>
+
+
+
+    <select id="queryBuoyHourData" parameterType="Date1" resultMap="avgFactorCodeMap">
+    SELECT avg(fc_PH) as fc_PH
+     ,avg(fc_suspension) as fcSuspension,
+        avg(fc_BOD) as fc_BOD,avg(fc_COD) as fc_COD,
+        avg(fc_TOC) as fcfc_TOCToc,avg(fc_ammonia) as fc_ammonia,
+        avg(fc_phosphate) as fc_phosphate,avg(fc_temperature) as fc_temperature,
+        avg(fc_conductivity) as fc_conductivity,avg(fc_turbidity) as fc_turbidity,
+        avg(fc_dissolved ) as fc_dissolved,avg(fc_petroleum) as fc_petroleum,
+        avg(fc_alage) as fc_alage,avg(fc_chlorophyll)as fc_chlorophyll,
+        avg(fc_nitrogen) as fc_nitrogen,avg(fc_nitrite_nitrogen) as fc_nitrite_nitrogen
+     from factor_code WHERE fc_date between #{dateA}
+        and #{dateB}
+
+    </select>
+
+    <select id="querySkyData" parameterType="Date1" resultMap="factorCodeMap">
+      SELECT  * from factor_code where fc_date between #{dateA}
+       and #{dateB}
+    </select>
+  </mapper>

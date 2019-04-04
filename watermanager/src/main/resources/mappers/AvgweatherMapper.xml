@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.AvgweatherMapper">
+    <cache/>
+
+    <resultMap id="avgWeatherResult" type="Avgweather">
+        <!--id property="fcId" column="fc_id"/-->
+        <result property="wRainfall" column="w_rainfall"/>
+        <result property="wTemperature" column="w_temperature"/>
+        <result property="wHumidity" column="w_humidity"/>
+        <result property="wMostRainfall" column="w_most_rainfall"/>
+        <result property="wSpeed" column="w_speed"/>
+        <result property="wDirection" column="w_direction"/>
+        <!--result property="fcDate" column="fc_date"/-->
+    </resultMap>
+    <select id="queryAvgDay" resultMap="avgWeatherResult" parameterType="DateUtil">
+       select avg(w_rainfall) as w_rainfall ,avg(w_temperature) as w_temperature ,avg(w_humidity) as w_humidity ,avg(w_most_rainfall) as  w_most_rainfall,
+       avg(w_speed) as w_speed ,avg(w_direction) as w_direction from weather
+         where w_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+    <select id="queryAvgMonth" resultMap="avgWeatherResult" parameterType="DateUtil">
+       select avg(w_rainfall) as w_rainfall ,avg(w_temperature) as w_temperature ,avg(w_humidity) as w_humidity ,avg(w_most_rainfall) as  w_most_rainfall,
+       avg(w_speed) as w_speed ,avg(w_direction) as w_direction from weather
+         where w_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+    <select id="queryAvgYear" resultMap="avgWeatherResult" parameterType="DateUtil">
+       select avg(w_rainfall) as w_rainfall ,avg(w_temperature) as w_temperature ,avg(w_humidity) as w_humidity ,avg(w_most_rainfall) as  w_most_rainfall,
+       avg(w_speed) as w_speed ,avg(w_direction) as w_direction from weather
+         where w_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+
+    <select id="queryAvgWeek" resultMap="avgWeatherResult" parameterType="DateUtil">
+       select avg(w_rainfall) as w_rainfall ,avg(w_temperature) as w_temperature ,avg(w_humidity) as w_humidity ,avg(w_most_rainfall) as  w_most_rainfall,
+       avg(w_speed) as w_speed ,avg(w_direction) as w_direction from weather
+         where w_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+</mapper>

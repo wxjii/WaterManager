@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.repository1.ToxicityRepository">
+
+    <resultMap id="ToxicityMap" type="Toxicity">
+        <id column="t_id" property="tId"/>
+        <result column="t_value" property="tValue"/>
+        <result column="t_date" property="tDate"/>
+    </resultMap>
+
+    <resultMap id="queryToxicityHourData" type="AvgToxicity">
+        <result column="t_value" property="tValue"/>
+    </resultMap>
+
+    <select id="toxicityData"  resultMap="ToxicityMap">
+        select * from toxicity order by t_id desc limit 10;
+    </select>
+
+    <select id="queryToxicityHourData" parameterType="Date1" resultMap="queryToxicityHourData">
+
+      SELECT  avg(t_value) as t_value from toxicity where t_date between #{dateA}
+       and #{dateB}
+
+    </select>
+
+
+    <select id="toxicityHistoryData" parameterType="Date1" resultMap="ToxicityMap">
+
+      SELECT  * from toxicity where t_date between #{dateA}
+       and #{dateB}
+
+    </select>
+</mapper>

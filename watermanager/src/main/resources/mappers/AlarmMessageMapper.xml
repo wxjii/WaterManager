@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.AlarmMessageRepository">
+    <resultMap id="AlarmMessageResultMap" type="AlarmMessage">
+        <id column="a_m_id" property="aMId" jdbcType="INTEGER" javaType="int"/>
+        <result column="a_m_time" property="aMTime"/>
+        <result column="a_m_limits" property="aMLimits" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result column="a_m_scope" property="aMScope" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        <result column="a_m_value" property="aMValue" jdbcType="VARCHAR" javaType="java.lang.String"/>
+
+            <association column="m_id" property="monitor">
+                <id column="m_id" property="mId"/>
+                <result column="m_standard_up" property="mStandardUp"/>
+                <result column="m_standard_down" property="mStandardDown"/>
+                <result column="m_finite_up" property="mFiniteUp"/>
+                <result column="m_finite_dowm" property="mFiniteDowm"/>
+            </association>
+
+        <association column="a_t_id" property="alarmType">
+            <id column="a_t_id" property="aTId"/>
+            <result column="a_t_name" property="aTName"/>
+        </association>
+    </resultMap>
+
+    <select id="findAllByMessage" resultMap="AlarmMessageResultMap">
+        select a_m_id,m.m_standard_up,T.a_t_name,a_m_time,a_m_limits,a_m_scope,a_m_scope,a_m_value,a_m_no from alarm_message a
+        inner join monitor m on a.m_id = m.m_id
+        inner join alarmType T on a.a_t_id = T.a_t_id
+    </select>
+
+    <select id="findMessage" resultMap="AlarmMessageResultMap">
+        select * from alarm_message where a_m_no=0;
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<insert id="saveByMessage" parameterType="AlarmMessage">-->
+        <!--insert into alarm_message(m_id,a_t_id,a_m_limits,a_m_scope,a_m_value)-->
+        <!--values (#{mId},#{aTId},#{aMLimits},#{aMScope},#{aMValue})-->
+    <!--</insert>-->
+
+    <!--<delete id="deleteAlarmMessage" parameterType="AlarmMessage">-->
+        <!--delete from alarm_message where a_m_id=#{aMId}-->
+    <!--</delete>-->
+
+</mapper>

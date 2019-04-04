@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.watermanager.repository.AvgtoxicityMapper">
+    <cache/>
+
+    <resultMap id="avgtoxicityResult" type="Avgtoxicity">
+        <!--id property="fcId" column="fc_id"/-->
+        <result property="tValue" column="t_value"/>
+        <!--result property="fcDate" column="fc_date"/-->
+    </resultMap>
+    <select id="queryAvgDay" resultMap="avgtoxicityResult" parameterType="DateUtil">
+       select avg(t_value) as t_value from toxicity
+         where t_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+    <select id="queryAvgMonth" resultMap="avgtoxicityResult" parameterType="DateUtil">
+       select avg(t_value) as t_value from toxicity
+         where t_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+    <select id="queryAvgYear" resultMap="avgtoxicityResult" parameterType="DateUtil">
+       select avg(t_value) as t_value from toxicity
+         where t_date  between #{prefixdate} and #{suffixdate}
+</select>
+
+    <select id="queryAvgWeek" resultMap="avgtoxicityResult" parameterType="DateUtil">
+       select avg(t_value) as t_value from toxicity
+         where t_date  between #{prefixdate} and #{suffixdate}
+</select>
+</mapper>
